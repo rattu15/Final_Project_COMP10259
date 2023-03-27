@@ -1,6 +1,9 @@
 *{
     margin:0px
 }
+main{
+background-color: beige;
+}
 .header{
     text-align: center;
     color:whitesmoke;
@@ -55,14 +58,20 @@ a{
     margin-top:50px;
 }
 .intro-image{
-    height:160px;
-    width:180px;
+    height:200px;
+    width:200px;
     border-radius:5%;
     float:right;
+    margin-left:20px;
+    margin-bottom: 5px;
+    box-shadow:2px 0px 3px 5px  rgb(72, 72, 72);
 }
 .intro{
     font-weight: bolder;
     font-size:40px;
+    background-color: blueviolet;
 }
-
-
+.intro-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
