@@ -1,0 +1,68 @@
+*{
+    margin:0px
+}
+.header{
+    text-align: center;
+    color:whitesmoke;
+    padding:20px;
+}
+header{
+    background-color:rgb(71, 71, 212);
+    height: 80px;
+    width:100%;
+}
+nav{
+    height:50px;
+    width:100%;
+    background-color: rgb(210, 206, 206);
+    
+}
+a{
+    text-decoration: none; 
+}
+.fish{
+    height:40px;
+    width:30px;
+    padding-left: 10px;
+}
+.references{
+    padding-top:10px;
+    font-size: large;
+    float:right;
+    right:20px;
+    padding-right:30px;
+ color:black;
+
+}
+.references:hover{
+    color:blue;
+}
+.common{
+    padding-left:3px;
+    padding-top:10px;
+    font-size:large;
+    color:black;
+    
+}
+.overview{
+    font-size:larger;
+    left:140px;
+    color:black;
+    padding-top:10px;
+}
+.section-1{
+    margin:90px;
+    margin-top:50px;
+}
+.intro-image{
+    height:160px;
+    width:180px;
+    border-radius:5%;
+    float:right;
+}
+.intro{
+    font-weight: bolder;
+    font-size:40px;
+}
+
+
