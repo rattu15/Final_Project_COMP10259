@@ -86,22 +86,81 @@ main:hover{
     border: 5px dashed black;
 }
 footer{
+    background-color:#1b4965;
+    margin: 30px;
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
     text-align: center;
-    font-size: xx-large;
-    color:black;
-    background-color: azure;
-    margin: 30px auto;
-    width: 20%;
-    transition: color 1s, background-color 1s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-footer:hover{
-    color:azure;
-    background-color: black;
+.form-container{
+    background-color: #1b4965;
+    padding: 20px;
+    border-radius: 10px;
+}
+form{
+    position: relative;
+    padding: 20px;
+    background-color:#cae9ffa5;
+    width: 48%;
+    text-align: left;
+    border-radius: 10px;
+}
+.unit{
+    position: relative;
+    text-align: left;
+    display: inline-block;
+    width: 48%;
+    margin: 1em 0;
+}
+.unit:last-of-type{
+    width: 100%;
+}
+.input{
+    display: block;
+    padding: 1.5% 0;
+    background-color: lightblue;
+    border: 0;
+    border-radius: 10px;
+    transition: background-color 1s;
+    width: 80%;
+}
+.input[type="submit"]{
+    height: 3em;
+    width: 20%;
+    text-align: center;
+    border: 1px solid #1b4965;
+}
+.input:focus{
+    background-color: white;
+    outline: none;
+    box-shadow: none;
+}
+form textarea{
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    height: 5em;
+    resize: none;
+    overflow: auto;
+}
+textarea:focus{
+    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 a{
-    color:black;
-    transition: color 1s;
+    color:rgb(255, 255, 255);
+    background-color: #264653;
+    transition: all 1s;
+    padding: 20px;
+    margin: auto auto;
 }
 a:hover{
-    color: azure;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    padding: 40px;
 }
