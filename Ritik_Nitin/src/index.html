@@ -6,14 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Common ClownFish</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('.onHoverShadow').click(function() {
+                $(".modal").css('display', function(_, value) {
+                    return value === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+        $(document).ready(function(){
+            $(".close").click(function(){
+                $(".modal").css("display", "none")
+            });
+        });
+    </script>
 </head>
 <body>
     <div style="color: rgba(0, 0, 0, 0)">sdf</div>
     <header>
         <h1 class="header">Common ClownFish</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#section-1">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#footer">Contact us</a></li>
+        </ul>
+    </nav>
     <main>
-        <section class="section-1">
+        <section id="section-1">
             <p style="color: #ffea0000;">j</p>
             <h1 class="headings">Introduction</h1>
             <p class="paragraph">Clownfish are a group of marine fish that belong to the family Pomacentridae, which also includes damselfish. They are known for their striking colors and unique behaviors, such as forming symbiotic relationships with sea anemones. In this detailed research,
@@ -68,55 +90,61 @@
         <section class="clearing">
             <h2 class="headings">Conservation Status</h2>
             <p class="paragraph"><img src="img/image6.jpg" style="float: right">Several species of clownfish are listed as threatened or endangered due to overfishing for the 
-                aquarium trade and habitat destruction caused by human activity, including coral bleaching. 
+                aquarsium trade and habitat destruction caused by human activity, including coral bleaching. 
                 The International Union for Conservation of Nature (IUCN) lists the Orange clownfish (Amphiprion percula) as "vulnerable," 
                 while the Maroon clownfish (Premnas biaculeatus) is listed as "near threatened." 
                 Efforts are underway to protect clownfish populations through conservation measures such as marine protected areas and 
                 sustainable harvesting practices.
             </p>
         </section>
-        <section class="slideshow">
-            <div class="slider">
-                <div class="slides">
-                    <input type="radio" name="radio-button" id="radio1">
-                    <input type="radio" name="radio-button" id="radio2">
-                    <input type="radio" name="radio-button" id="radio3">
-                    <input type="radio" name="radio-button" id="radio4">
-                    <input type="radio" name="radio-button" id="radio5">
-                    <input type="radio" name="radio-button" id="radio6">
-                    <div class="slide one">
-                        <img src="img/image1.jpeg">
+        <section id="gallery">
+            <div class="row">
+                <div class="column">
+                    <img id="row1col1" src="img/image1.jpeg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                </div>
+                <div class="column">
+                    <img id="row1col2" src="img/image2.png" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                </div>
+                <div class="column">
+                    <img id="row1col3" src="img/image3.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                </div>
+                <div class="column">
+                    <img id="row1col4" src="img/image4.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                </div>
+            </div>
+            
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                            <img src="img/image1.jpeg">
                     </div>
-                    <div class="slide">
-                        <img src="img/image2.png">
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                            <img src="img/image2.png">
                     </div>
-                    <div class="slide">
-                        <img src="img/image3.jpg">
+            
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                            <img src="img/image3.jpg">
                     </div>
-                    <div class="slide">
-                        <img src="img/image4.jpg">
+                
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                            <img src="img/image4.jpg">
                     </div>
-                    <div class="slide">
-                        <img src="img/image5.jpg">
+                    <div class="column">
+                        <img id="row2col1" class="demo cursor" src="img/image1.jpeg" onclick="currentSlide(1)" alt="ClownFish">
                     </div>
-                    <div class="slide">
-                        <img src="img/image6.jpg">
+                    <div class="column">
+                        <img id="row2col2" class="demo cursor" src="img/image2.png" onclick="currentSlide(2)" alt="ClownFish">
                     </div>
-                    <div class="nav-auto">
-                        <div class="auto-button1"></div>
-                        <div class="auto-button2"></div>
-                        <div class="auto-button3"></div>
-                        <div class="auto-button4"></div>
-                        <div class="auto-button5"></div>
-                        <div class="auto-button6"></div>
+                    <div class="column">
+                        <img id="row2col3" class="demo cursor" src="img/image3.jpg" onclick="currentSlide(3)" alt="ClownFish">
                     </div>
-                    <div class="nav-manual">
-                        <label for="radio1" class="manual-button"></label>
-                        <label for="radio2" class="manual-button"></label>
-                        <label for="radio3" class="manual-button"></label>
-                        <label for="radio4" class="manual-button"></label>
-                        <label for="radio5" class="manual-button"></label>
-                        <label for="radio6" class="manual-button"></label>
+                    <div class="column">
+                        <img id="row2col4" class="demo cursor" src="img/image4.jpg" onclick="currentSlide(4)" alt="ClownFish">
                     </div>
                 </div>
             </div>
@@ -133,9 +161,90 @@
             </div>
         </section>
     </main>
-    <footer>
+    <footer id="footer">
         <a href="https://rattu15.github.io/Contact-form/">Contact us</a>
         <a href="honesty.html">references</a>
     </footer>
 </body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    function showSlides(n){
+        var i;
+        var slides = $(".slides");
+        for(i = 0; i < slides.length; i++){
+            slides[i].style.display = "none";
+        }
+        if (n > slides.length){
+            slideIndex = 1;
+        }
+        if (n < 1){ slideIndex = slides.length}
+        slides[slideIndex - 1].style.display = "block";
+        }
+        $(document).ready(function(){
+            $(".next").click(plusSlides(1));
+        });
+        $(document).ready(function(){
+            $(".prev").click(plusSlides(-1));
+        });
+        $(document).ready(function(){
+            $("#row1col1").click(function(){
+                openModal();
+                currentSlide();
+            });
+        });
+        $(document).ready(function(){
+            $("#row1col2").click(function(){
+                openModal();
+                currentSlide(2);
+            });
+        });
+        $(document).ready(function(){
+            $("#row1col3").click(function(){
+                openModal();
+                currentSlide(3);
+            });
+        });
+        $(document).ready(function(){
+            $("#row1col4").click(function(){
+                openModal();
+                currentSlide(4);
+            });
+        });
+        
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+</script>
 </html>
