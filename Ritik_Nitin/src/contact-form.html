@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact-form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        $(function(){
+            $("#date").datepicker({ dateFormat: 'dd/mm/yy'});
+        })
+        $(function(){
+            $("#submit").click(function(){
+                if(!(/^[a-zA-Z]{5,}$/.test($("#first-name").prop("value")))){
+                    alert("First name is not long enough.");
+                    return false;
+                }
+                else if(!(/^[a-zA-Z]{5,}$/.test($("#last-name").prop("value")))){
+                    alert("Last name does not have enough characters.");
+                    return false;
+                }
+                else if(!(/.*@.*/.test($("#email").prop("value")))){
+                    alert("Email is not valid.");
+                    return false;
+                }
+                else if(!(/^\d{10}$/.test($("#number").prop("value")))){
+                    alert("Number is not valid.");
+                    return false;
+                }
+                else if(!(/^(?:0[1-9]|[1-2][0-9]|3[0-1])\/(?:0[1-9]|1[0-2])\/\d{4}$/.test($("#date").prop("value")))){
+                    alert("date is not valid.");
+                    return false;
+                }
+                else if(($.trim($("#feedback").val()).length < 50)){
+                    alert("please type at least 50 alphabets in the feedback.")
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <form action="https://formsubmit.co/assignment3.csp@gmail.com" method="POST" id="form" >
+            <div class="unit"><label>First Name:<input class="input" type="text" name="name" id="first-name" required></label></div>
+            <div class="unit"><label>Last Name:<input class="input" type="text" name="name" id="last-name" required></label></div>
+            <div class="unit"><label>Email:<input class="input" type="email" name="email" id="email" required></label></div>
+            <div class="unit"><label>Number:<input class="input" type="tel" name="number" id="number" required></label></div>
+            <div class="unit"><label>Date:<input class="input" name="date" id="date" required></label></div>
+            <div class="unit" id="area"><label>We're all ears! <textarea class="input" name="feedback" id="feedback"></textarea></label></div>
+            <div class="unit"><input type="submit" class="input" id="submit"></div>
+        </form>
+    </div>
+</body>
+</html>
