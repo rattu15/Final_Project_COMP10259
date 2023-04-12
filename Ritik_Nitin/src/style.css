@@ -30,7 +30,7 @@ nav ul{
     transition: 1s;
 }
 nav li a:hover{
-    color:#84ccf6;
+    color: yellow;
 }
 main{
 background-color: rgba(113, 205, 174, 0.603);
