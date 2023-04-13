@@ -8,7 +8,7 @@ html {
 }
 
 .form-container {
-  border: 2px dashed black;
+  border: 2px dashed rgb(233, 231, 231);
   background-color: #1b4965;
   padding: 20px;
   border-radius: 10px;
